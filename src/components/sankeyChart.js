@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Chart from "react-google-charts";
-let sankeyData = [["From", "To", "Weight", "change", "annotation"]];
+let sankeyData = [["From", "To", "Weight", "change"]];
 
 const v1 = require("../v1.json");
 const v2 = require("../v2.json");
@@ -9,12 +9,14 @@ const columns = [
   { type: "string", id: "to" },
   { type: "number", id: "sizee" },
   { type: "number", id: "size change" },
+  // { type: 'string',  role: 'tooltip',p: {html: true} }
+  { 'type': 'string', 'role': 'tooltip'}
 ];
 const noChange = { name: "no size change", value: 0, objects: [] };
 const shrinked = { name: "shrinked", value: 0, objects: [] };
 const grew = { name: "grew", value: 0, objects: [] };
-const added = { name: "added", value: 0, objects: [] };
-const removed = { name: "removed", value: 0, objects: [] };
+// const added = { name: "added", value: 0, objects: [] };
+// const removed = { name: "removed", value: 0, objects: [] };
 
 function mapInternals(v1Root, v2Root, objectName) {
   shrinked.objects = [];
@@ -32,33 +34,34 @@ function mapInternals(v1Root, v2Root, objectName) {
       xv2.diff = xv2.value - xv1.value;
       noChange.objects.push(xv2);
     } else if (xv1.value > xv2.value) {
-      ret.push([objectName, xv1.name, xv1.value, 0]);
-      ret.push([xv1.name, "shrinked", xv2.value, xv2.value - xv1.value]);
+      ret.push([objectName, xv1.name, xv1.value, 0, `${xv1.name}<br> old size: <b>${xv1.value/1000}Kb</b>`]);
+      ret.push([xv1.name, "shrinked", xv2.value, xv2.value - xv1.value, `${xv1.name}<br>shrinked <b>${(xv2.value/xv1.value).toFixed(1)}x</b>`]);
       xv2.diff = xv2.value - xv1.value;
       shrinked.objects.push(xv2);
-      ret.push(["shrinked", objectName + "2.0", xv2.value, 0]);
+      ret.push(["shrinked", objectName + "8.0", xv2.value, 0,`${xv2.name}<br> new size: <b>${xv2.value/1000}Kb</b>`]);
     } else {
-      ret.push([objectName, xv1.name, xv1.value, 0]);
+      ret.push([objectName, xv1.name, xv1.value, 0,`${xv1.name}<br> size: <b>${xv1.value/1000}Kb</b>`]);
       //   ret.push(["grew", xv2.name, xv2.value, xv2.value - xv1.value]);
-      ret.push([xv1.name, "grew", xv2.value, xv2.value - xv1.value]);
+      ret.push([xv1.name, "grew", xv2.value, xv2.value - xv1.value,`${xv1.name}<br>grew <b>${(xv2.value/xv1.value).toFixed(1)}x</b>`]);
       xv2.diff = xv2.value - xv1.value;
       grew.objects.push(xv2);
-      ret.push(["grew", objectName + "2.0", xv2.value, 0]);
+      ret.push(["grew", objectName + "8.0", xv2.value, 0,`${xv2.name}<br> new size: <b>${xv2.value/1000}Kb</b>`]);
     }
   });
-  //   ret.push([objectName, 'other', noChange.value, 0]);
-  //   ret.push(['other', "no size change", noChange.value, 100]);
-  //   ret.push(["no size change", objectName + "2.0", noChange.value, 0]);
+  ret.push([objectName, "other", noChange.value, 0,`<b>${noChange.value/1000}Kb</b>`]);
+  ret.push(["other", "no size change", noChange.value, 100,"<b>1:1</b>"]);
+  ret.push(["no size change", objectName + "8.0", noChange.value, 0,`<b>${noChange.value/1000}Kb</b>`]);
   return ret;
 }
 
 function show(obj) {
   const ret = [columns];
   obj.objects.forEach((x) => {
-    ret.push([obj.name, x.name, x.value, x.diff]);
+    ret.push([obj.name, x.name + " newer", x.value, x.value, `${x.name}<br> difference:<b>${x.diff/1000} Kb</b>`]);
   });
   return ret;
 }
+
 sankeyData = mapInternals(v1.props.pageProps.sizeData.treemap, v2.props.pageProps.sizeData.treemap, "1Password ");
 
 class SankeyChart extends Component {
@@ -76,8 +79,9 @@ class SankeyChart extends Component {
               //show shrinked
               sankeyData = show(shrinked);
             } else if (chart.getSelection()[0].name === "grew") {
+              console.log(grew)
               sankeyData = show(grew);
-            } else {
+            } else if (chart.getSelection()[0].name === "no size change") {
               sankeyData = show(noChange);
             }
 
@@ -90,7 +94,8 @@ class SankeyChart extends Component {
 
   options() {
     return {
-      sankey: { iterations: 200, node: { width: 50, interactivity: true }, tooltip: { textStyle: { color: "#FF0000" }, showColorCode: true } },
+      sankey: { iterations: 32, node: { width: 50, interactivity: true }},
+      tooltip: { isHtml: true} ,
     };
   }
   goBack() {
@@ -98,21 +103,31 @@ class SankeyChart extends Component {
     this.forceUpdate();
   }
   render() {
-    console.log(this.chartEvents);
+    // console.log(this.chartEvents);
     return (
-      <div>
-        <Chart
-          width={"800px"}
-          height={"500px"}
-          chartType="Sankey"
-          loader={<div>Loading Chart</div>}
-          data={sankeyData}
-          // rootProps={{ "data-testid": "1" }}
-          chartEvents={this.chartEvents}
-          options={this.options()}
-          // action={}
-        />
-        <button onClick={() => this.goBack()}>back</button>
+      <div className="row">
+        <div className="col">1Password<h1>{v1.props.pageProps.outerData.build_products[0].version}</h1>
+        <h3>{v1.props.pageProps.outerData.size.installedSize/1000}kb</h3>
+        </div>
+        <div className="col-md-auto">                
+          <Chart
+            width={"800px"}
+            height={"500px"}
+            chartType="Sankey"
+            loader={<div>Loading Chart</div>}
+            data={sankeyData}
+            // rootProps={{ "data-testid": "1" }}
+            chartEvents={this.chartEvents}
+            options={this.options()}
+            // action={}
+          />
+          <button onClick={() => this.goBack()}>back</button>
+        </div>
+        <div className="col col-lg-2">1Password <h1>{v2.props.pageProps.outerData.build_products[0].version} (latest)</h1>
+        <h3>{v2.props.pageProps.outerData.size.installedSize/1000}kb</h3>
+        </div>
+
+        <i>Click on one of: "no size chage", "grew" or "shrinked" to zoom in</i>
       </div>
     );
   }

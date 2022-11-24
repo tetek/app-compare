@@ -9,7 +9,7 @@
           "last_modified": "2022-05-18T15:28:43.000Z",
           "primary_build_product_id": "ebfb9767-6400-4b6f-8477-9f2395798449",
           "has_linkmaps": null,
-          "size": { "installedSize": 145581848, "downloadSize": 77709775 },
+          "size": { "installedSize": 145580000, "downloadSize": 77709775 },
           "data_url": "https://emerge-processed-builds-prod.s3.us-west-1.amazonaws.com/683c6498-b1fc-444f-93fe-00b8d8c96441?AWSAccessKeyId=ASIAQMVGUJSJAECWWJ2G\u0026Expires=1669161142\u0026Signature=9tAb1eb1mDq8dt1uNkbjTghDZhs%3D\u0026x-amz-security-token=IQoJb3JpZ2luX2VjEKf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMSJHMEUCIDjWee1y7hUGtTiL2LEcxTh0XGfiNcw7XfzZsuPIMKsdAiEAupkBEpjD%2Fs7YHEzlm%2FFbfqwze5taMqLkjZcKxISHo30qhQMIsP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARACGgwwMjcxOTMwMDMxNTQiDE7upSnjTR1xi3XnfirZAvtyL7WpiV8BkwLuH%2FcLoh2CzCfrLxe6gSZgUqytYgi9JR71JPEEZIcxkLyxnJ0f12jeBGe2DgrIOeMIvf94I8Qh9NG4zMPrt1l9ahwVy8ukniNXLLoFrgEs4ZGsFZxixGbJKkTHV30SRENIobXQ0XggnknY2u%2FusGuQNaCTPxRpuqBqFjNvvpuaDtZDGjaiE4Ru3j6TwLJI%2FE89%2F1w3HvzgJSp5CgHrGMrLftHx1mfI5lTPk5N%2FpvmjXxEOaeYFPScHggj266urDq0a9fUtJBbltHM2AArH7UWI%2FrUSQJ2epuBFDAqNxlBjAORCTQ8vRgYlqeB4k4uHA6Ko%2Buj98RkgoY7zmvSImn64p9inacx5IjlTz3xknuvLaUp44hpLEqAataRzlsEPqXkJT%2FzIsEl9ES15AOkFUNetdxQ%2FgOAFr3UUQWvdUCK1pXfEmZ%2ByVKyhyG%2FEik%2BxJjD%2BpPWbBjqeAQhC1w9fpW4rijyF%2BBhK7Sp2Y99mNqVk1b1kipSnLmobGMI80PJwcghSZZ9tSlZg3i9kl8FTbvFCC6M2aBkwDRJwoS9gDsnSpg1E5jGaudgffciOZfh8fKC7mBy7HM9IpClu8lgVVU8W9xPq1sODOK7sPI4ADw2bWLRg%2BwqWqSOHkAit2uluC9tq4fvuu%2FmxZRqvUko6lhJeant4%2F4m%2B",
           "base_build_size": null,
           "icon_url": "https://emerge-icons-prod.s3.us-west-1.amazonaws.com/auth0%7C60d690717cd79d006839b669/683c6498-b1fc-444f-93fe-00b8d8c96441.zip/Icon.png?AWSAccessKeyId=ASIAQMVGUJSJAECWWJ2G\u0026Expires=1669675942\u0026Signature=9jaJwM4XKrS%2B6iVN8bWkBY5BOwM%3D\u0026x-amz-security-token=IQoJb3JpZ2luX2VjEKf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMSJHMEUCIDjWee1y7hUGtTiL2LEcxTh0XGfiNcw7XfzZsuPIMKsdAiEAupkBEpjD%2Fs7YHEzlm%2FFbfqwze5taMqLkjZcKxISHo30qhQMIsP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARACGgwwMjcxOTMwMDMxNTQiDE7upSnjTR1xi3XnfirZAvtyL7WpiV8BkwLuH%2FcLoh2CzCfrLxe6gSZgUqytYgi9JR71JPEEZIcxkLyxnJ0f12jeBGe2DgrIOeMIvf94I8Qh9NG4zMPrt1l9ahwVy8ukniNXLLoFrgEs4ZGsFZxixGbJKkTHV30SRENIobXQ0XggnknY2u%2FusGuQNaCTPxRpuqBqFjNvvpuaDtZDGjaiE4Ru3j6TwLJI%2FE89%2F1w3HvzgJSp5CgHrGMrLftHx1mfI5lTPk5N%2FpvmjXxEOaeYFPScHggj266urDq0a9fUtJBbltHM2AArH7UWI%2FrUSQJ2epuBFDAqNxlBjAORCTQ8vRgYlqeB4k4uHA6Ko%2Buj98RkgoY7zmvSImn64p9inacx5IjlTz3xknuvLaUp44hpLEqAataRzlsEPqXkJT%2FzIsEl9ES15AOkFUNetdxQ%2FgOAFr3UUQWvdUCK1pXfEmZ%2ByVKyhyG%2FEik%2BxJjD%2BpPWbBjqeAQhC1w9fpW4rijyF%2BBhK7Sp2Y99mNqVk1b1kipSnLmobGMI80PJwcghSZZ9tSlZg3i9kl8FTbvFCC6M2aBkwDRJwoS9gDsnSpg1E5jGaudgffciOZfh8fKC7mBy7HM9IpClu8lgVVU8W9xPq1sODOK7sPI4ADw2bWLRg%2BwqWqSOHkAit2uluC9tq4fvuu%2FmxZRqvUko6lhJeant4%2F4m%2B",
@@ -66,6 +66,17 @@
                 "children": [
                   {
                     "children": [],
+                    "value": 4408448,
+                    "name": "tetek 1323"
+                  }
+                ],
+                "value": 4408448,
+                "name": "tetek 231231"
+              },              
+              {
+                "children": [
+                  {
+                    "children": [],
                     "type": 55,
                     "value": 101424,
                     "name": "Code Signature"
@@ -100,6 +111,11 @@
                     "children": [
                       {
                         "children": [
+                          {
+                            "children": [],
+                            "value": 63710002,
+                            "name": "__cfttk"
+                          },
                           {
                             "children": [],
                             "value": 63712,
@@ -514,7 +530,11 @@
                 "name": "af.lproj"
               },
               {
-                "children": [],
+                "children": [ {
+                  "children": [],
+                  "value": 81922,
+                  "name": "AppIcon60x60@2x.png"
+                }],
                 "value": 8192,
                 "name": "AppIcon60x60@2x.png"
               },

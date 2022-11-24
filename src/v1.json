@@ -46,6 +46,11 @@
                     "children": [],
                     "value": 2408448,
                     "name": "CodeResources"
+                  },
+                  {
+                    "children": [],
+                    "value": 2408448,
+                    "name": "CodeResources-ttk"
                   }
                 ],
                 "value": 2408448,

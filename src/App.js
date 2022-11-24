@@ -13,17 +13,10 @@ function App() {
     <div className="App">
       <div className="container">
       <div className="row">.</div>
-        <div className="row justify-content-md-center">
-          <h1>hey</h1>
+        <div className="row justify-content-md-center title">
+          <h1>App size comparison</h1>
         </div>
-        <div className="row">
-          <div className="col">1Password 1.0</div>
-          <div className="col-md-auto">
-            {/* Variable width content */}
-            <SankeyChart />
-          </div>
-          <div className="col col-lg-2">1Password 2.0</div>
-        </div>
+        <SankeyChart />        
       </div>
     </div>
   );
