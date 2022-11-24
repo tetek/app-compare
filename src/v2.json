@@ -55,6 +55,17 @@
                 "children": [
                   {
                     "children": [],
+                    "value": 4408448,
+                    "name": "tetek souce"
+                  }
+                ],
+                "value": 4408448,
+                "name": "tetek extra"
+              },
+              {
+                "children": [
+                  {
+                    "children": [],
                     "type": 55,
                     "value": 101424,
                     "name": "Code Signature"
