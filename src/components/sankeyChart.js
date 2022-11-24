@@ -108,6 +108,7 @@ class SankeyChart extends Component {
       <div className="row">
         <div className="col col-lg-2">1Password<h1>{v1.props.pageProps.outerData.build_products[0].version}</h1>
         <h3>{v1.props.pageProps.outerData.size.installedSize/1000}kb</h3>
+       
         </div>
         <div className="col-md-auto">                
           <Chart
@@ -124,8 +125,7 @@ class SankeyChart extends Component {
           <button onClick={() => this.goBack()}>back</button>
           <br/><br/>
         
-        <i>Click on one of: "no size chage", "grew" or "shrinked" to zoom in</i>
-        <i>This project is based on JSON representation of 1Password app internals from EmergeTools. The supposed 8.0.0 is the same JSON with random modifications just to represent the potential diff.</i>
+        
         </div>
         <div className="col col-lg-2">1Password <h1>{v2.props.pageProps.outerData.build_products[0].version} (latest)</h1>
         <h3>{v2.props.pageProps.outerData.size.installedSize/1000}kb</h3>
