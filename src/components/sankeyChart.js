@@ -106,12 +106,12 @@ class SankeyChart extends Component {
     // console.log(this.chartEvents);
     return (
       <div className="row">
-        <div className="col">1Password<h1>{v1.props.pageProps.outerData.build_products[0].version}</h1>
+        <div className="col col-lg-2">1Password<h1>{v1.props.pageProps.outerData.build_products[0].version}</h1>
         <h3>{v1.props.pageProps.outerData.size.installedSize/1000}kb</h3>
         </div>
         <div className="col-md-auto">                
           <Chart
-            width={"800px"}
+            width={"650px"}
             height={"500px"}
             chartType="Sankey"
             loader={<div>Loading Chart</div>}
@@ -122,12 +122,14 @@ class SankeyChart extends Component {
             // action={}
           />
           <button onClick={() => this.goBack()}>back</button>
+          <br/><br/>
+        
+        <i>Click on one of: "no size chage", "grew" or "shrinked" to zoom in</i>
         </div>
         <div className="col col-lg-2">1Password <h1>{v2.props.pageProps.outerData.build_products[0].version} (latest)</h1>
         <h3>{v2.props.pageProps.outerData.size.installedSize/1000}kb</h3>
         </div>
-
-        <i>Click on one of: "no size chage", "grew" or "shrinked" to zoom in</i>
+        
       </div>
     );
   }
