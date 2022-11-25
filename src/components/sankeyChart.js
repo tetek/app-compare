@@ -57,7 +57,7 @@ function mapInternals(v1Root, v2Root, objectName) {
 function show(obj) {
   const ret = [columns];
   obj.objects.forEach((x) => {
-    ret.push([obj.name, x.name + " newer", x.value, x.value, `${x.name}<br> difference:<b>${x.diff/1000} Kb</b>`]);
+    ret.push([obj.name, x.name, x.value, x.value, `${x.name}<br> difference:<b>${x.diff/1000} Kb</b>`]);
   });
   return ret;
 }
@@ -105,7 +105,7 @@ class SankeyChart extends Component {
   render() {
     // console.log(this.chartEvents);
     return (
-      <div className="row">
+      <div className="row d-flex justify-content-center">
         <div className="col col-lg-2">1Password<h1>{v1.props.pageProps.outerData.build_products[0].version}</h1>
         <h3>{v1.props.pageProps.outerData.size.installedSize/1000}kb</h3>
        
